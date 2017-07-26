@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 using System;
+
 namespace Tizen
 {
     public class Log
     {
-        public static void Error(params object[] s) {Debug(s);}
-        public static void Debug(params object[] message) {
-            string str = "";
+        public static void Debug(params object[] s) {Message("D", s);}
+        public static void Error(params object[] s) {Message("E", s);}
+        public static void Fatal(params object[] s) {Message("F", s);}
+        public static void Info(params object[] s)  {Message("I", s);}
+        public static void Verbose(params object[] s) {Message("V", s);}
+        public static void Warn(params object[] s) {Message("W", s);}
+
+        private static void Message(string type, params object[] message) {
+            string str = type + ": ";
             if (message == null || message.Length == 0)
             {
                 str = "null";
@@ -34,10 +41,5 @@ namespace Tizen
             }
             Console.WriteLine(str);
         }
-
-        public static void Fatal(params object[] s) {Debug(s);}
-        public static void Info(params object[] s) {Debug(s);}
-        public static void Warn(params object[] s) {Debug(s);}
-        public static void Verbose(params object[] s) {Debug(s);}
     }
 }

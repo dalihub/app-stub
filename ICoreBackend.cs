@@ -38,7 +38,7 @@ namespace Tizen.Applications.CoreBackend
         /// <param name="handler">The handler method with a TEventArgs type argument.</param>
         void AddEventHandler<TEventArgs>(EventType evType, Action<TEventArgs> handler) where TEventArgs : EventArgs;
 
-        /// <summary>
+        /// <summary>V
         /// Runs the mainloop of backend.
         /// </summary>
         /// <param name="args"></param>
