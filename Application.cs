@@ -32,6 +32,23 @@ namespace Tizen.Applications
         /// </summary>
         public static Application Current { get { return s_CurrentApplication; } }
 
+        private ApplicationInfo _applicationInfo;
+        public ApplicationInfo ApplicationInfo
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    if (_applicationInfo == null)
+                    {
+                        string appId = "Watch";
+                        _applicationInfo = new ApplicationInfo(appId);
+                    }
+                }
+                return _applicationInfo;
+            }
+        }
+
 
         /// <summary>
         /// Runs the application's main loop.
