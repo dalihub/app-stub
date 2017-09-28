@@ -15,6 +15,7 @@
  */
 
 using System;
+using Tizen.Applications;
 
 namespace Tizen.Applications
 {
@@ -41,6 +42,13 @@ namespace Tizen.Applications
                 bool value = false;
                 return value;
             }
+        }
+
+        /// <summary>
+        /// Initializes a ReceivedAppControl class.
+        /// </summary>
+        public ReceivedAppControl( SafeAppControlHandle handle )
+        {
         }
     }
 }
